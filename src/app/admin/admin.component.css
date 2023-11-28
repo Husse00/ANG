@@ -1,0 +1,12 @@
+.film-sektion {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: large;
+  margin: 2em;
+}
+.list-group-item{
+    margin: 2em;
+}
+.movie-image{
+    margin: 1em;
+}

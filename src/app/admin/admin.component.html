@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>ADMIN</h1>
+    <h2>Orders</h2>
+    <div *ngFor="let order of Orders" class="list-group-item">
+      
+      <h2>Order</h2>
+      
+      <section class="film-sektion">
+        <!-- Visar filmer för varje order -->
+      <div *ngFor="let orderRow of order.orderRows">
+        <img src="{{ orderRow.product?.imageUrl ? orderRow.product.imageUrl : '' }}" width="150" alt="" class="movie-image" />
+      </div>
+    </section>
+    <h4>Created by: {{ order.createdBy }}</h4>
+    <h4>Total price: {{ order.totalPrice }}</h4>
+      <h4>Payment method: {{ order.paymentMethod }}</h4>
+    <h5>Created: {{ order.created.replace("T", " ") }}</h5>
+      <hr />
+    </div>
+  </body>
+</html>
+<

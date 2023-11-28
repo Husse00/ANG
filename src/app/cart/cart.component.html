@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Cart</h1>
+    <div>
+      <div *ngFor="let item of data" class="list-group-item">
+        <h2 class="movie-name">
+          {{ item.name }}
+        </h2>
+        <br />
+        <img src="{{ item.imageUrl }}" width="250" alt="" class="movie-image" />
+        <p>Price: {{ item.price }}</p>
+        <br />
+        <!-- knapp som tar bort filmen från varukorgen genom en funktion -->
+        <button (click)="removeCartItem(item.id)" class="button-24">
+          Remove from cart
+        </button>
+        <hr />
+      </div>
+      <div>
+        <label for="firstname">Name:</label>
+        <input [(ngModel)]="firstName" type="text" name="name" />
+        <br /><br />
+
+        <label for="lastName">lastName:</label>
+        <input [(ngModel)]="lastName" type="text" name="name" /><br /><br />
+      
+
+        <label for="payMethod">Pay method </label>
+        <select [(ngModel)]="payMethod" name="payment method" id="method">
+          <option selected>Swish</option>
+          <option>Paypal</option>
+        </select>
+      </div>
+      <!-- knapp som skickar order genom en funktion -->
+      <button (click)="sendOrder()" class="button-15">Purchase</button>
+    </div>
+  </body>
+</html>

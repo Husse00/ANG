@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   
+    <section class="film-sektion">
+      <div *ngFor="let item of data" class="list-group-item">
+        <h2 class="movie-name">
+          {{ item.name }}
+        </h2>
+        <br />
+        <img src="{{ item.imageUrl }}" alt="" class="movie-image" />
+
+        <p class="item-desc">
+          {{ item.description }}
+        </p>
+        <p class="item-price">Purchase now for: {{ item.price }}</p>
+        <br />
+        <!-- knapp för funktion för att skicka data till localstorage -->
+        <button (click)="addToCart(item.id)" class="addcartBtn">Add to cart</button>
+      </div>
+    </section>
+  </body>
+</html>
